@@ -1,3 +1,4 @@
-[{
-
-}]
+[{"codigo":3, "nombre":"LUCAS", "apellido": "PEREZ", "dni": "32123321"},
+  {"codigo":1, "nombre":"LUCIA", "apellido": "ZALAZAR", "dni": "32222333"},
+  {"codigo":4, "nombre":"IGNACIO", "apellido": "SCOTT", "dni": "32111222"},
+  {"codigo":2, "nombre":"CARLOS", "apellido": "PEREZ", "dni": "32333111"}]

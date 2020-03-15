@@ -9,8 +9,8 @@ public class UserName implements Serializable {
     private int codigo;
     private int dni;
 
-    public UserName() {
-    }
+    public UserName() {}
+
     public UserName(String nombre, String apellido, int codigo, int dni){
         this.nombre = nombre;
         this.apellido = apellido;
