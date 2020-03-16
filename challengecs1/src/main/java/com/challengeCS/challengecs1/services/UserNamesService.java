@@ -1,9 +1,9 @@
 package com.challengeCS.challengecs1.services;
 
 import com.challengeCS.challengecs1.model.ResponseResults;
-import com.challengeCS.challengecs1.model.UserName;
+import com.challengeCS.challengecs1.model.DatosUser;
 import org.springframework.stereotype.Service;
-import com.challengeCS.challengecs1.persistence.UserNameStorage;
+import com.challengeCS.challengecs1.persistence.DatosUserStorage;
 
 import java.util.List;
 
@@ -11,25 +11,7 @@ import java.util.List;
 @Service
 public class UserNamesService {
 
-    //public UserNameStorage userNameStorage;
-    //public List <UserName> usernameInputs;
-
-
-   /* public UserNamesService (UserNameStorage userNameStorage){ this.userNameStorage  = userNameStorage;}
-    public List<UserName> getUsernameInputs() {
-        return usernameInputs;
-    }*/
-
-    /*public UserName addNameToList (UserName nuevoUserName){
-        long count = usernameInputs.stream().count();
-        int i=usernameInputs.stream().skip(count - 1).findFirst().get().getCodigo();
-        nuevoUserName.setCodigo(i+1);
-        getUsernameInputs().add(nuevoUserName);
-        this.userNameStorage.agregarNuevoIngresoJS(usernameInputs);
-        return nuevoUserName;
-
-    }*/
-
+    //devolucion de nombres del punto 1 y contabilizacion de cant de los mismos.
     public ResponseResults outputJson (List<String> nombresinput) {
         ResponseResults res = new ResponseResults();
         for (String nombre : nombresinput) {
@@ -44,5 +26,6 @@ public class UserNamesService {
         res.setCantidadNombres(cantidadEntradasNombresinput);
         return res;
     }
+
 
 }

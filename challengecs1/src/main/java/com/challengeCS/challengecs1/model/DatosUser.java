@@ -1,17 +1,19 @@
 package com.challengeCS.challengecs1.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
-public class UserName implements Serializable {
+public class DatosUser implements Serializable {
 
     private String nombre;
     private String apellido;
     private int codigo;
-    private int dni;
+    private String dni;
 
-    public UserName() {}
+    public DatosUser() {}
 
-    public UserName(String nombre, String apellido, int codigo, int dni){
+    public DatosUser(String nombre, String apellido, int codigo, String dni){
         this.nombre = nombre;
         this.apellido = apellido;
         this.codigo = codigo;
@@ -42,11 +44,12 @@ public class UserName implements Serializable {
         this.codigo = codigo;
     }
 
-    public int getDni() {
+    public String getDni() {
         return dni;
     }
 
-    public void setDni(int dni) {
+    public void setDni(String dni) {
         this.dni = dni;
     }
+
 }

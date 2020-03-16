@@ -3,7 +3,7 @@ package com.challengeCS.challengecs1.model;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-
+//almacenamiento de info para punto 1.
 public class ResponseResults  {
 
 
