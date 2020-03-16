@@ -1,14 +1,13 @@
-package persistence;
+package com.challengeCS.challengecs1.persistence;
 import java.io.IOException;
 import java.util.List;
 
 import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import model.UserName;
-import org.springframework.stereotype.Component;
+import com.challengeCS.challengecs1.model.UserName;
+
 import java.io.File;
 
-import static model.Constant.mapper;
+import static com.challengeCS.challengecs1.model.Constant.mapper;
 
 
 public class UserNameStorage {
@@ -35,10 +34,6 @@ public class UserNameStorage {
         }
 
     }
-
-
-
-
 
 }
 

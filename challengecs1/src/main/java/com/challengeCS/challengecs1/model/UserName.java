@@ -1,4 +1,4 @@
-package model;
+package com.challengeCS.challengecs1.model;
 
 import java.io.Serializable;
 

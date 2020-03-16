@@ -1,13 +1,14 @@
-package controller;
-import model.ResponseResults;
-import model.UserName;
+package com.challengeCS.challengecs1.controller;
+import com.challengeCS.challengecs1.model.ResponseResults;
+import com.challengeCS.challengecs1.model.UserName;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import services.UserNamesService;
+import com.challengeCS.challengecs1.services.UserNamesService;
 
 import java.util.List;
 
 @RestController
+@RequestMapping ("/api")
 public class UserNamesController {
 
     private UserNamesService userNamesService;
@@ -15,11 +16,17 @@ public class UserNamesController {
         this.userNamesService=userNamesService;
     }
 
-@PostMapping(path ="/nombre", consumes = "application/json", produces = "application/json")
-public UserName addUserName (@RequestBody UserName userName){
-        return userNamesService.addNameToList(userName);}
+@PostMapping("/nombre")
+  public ResponseEntity <Object> jsonPost1 (@RequestBody List<String> nombresIngresadosUser){
+        return ResponseEntity.ok(userNamesService.outputJson(nombresIngresadosUser));}
+
+
 
 }
+
+
+
+
 
 
 

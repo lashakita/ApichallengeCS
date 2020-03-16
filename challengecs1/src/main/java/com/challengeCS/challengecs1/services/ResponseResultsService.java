@@ -1,4 +1,4 @@
-package services;
+package com.challengeCS.challengecs1.services;
 
 /*
 @Service
