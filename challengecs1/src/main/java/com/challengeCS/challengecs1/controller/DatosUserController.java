@@ -34,7 +34,7 @@ public class DatosUserController {
     //get apellidos
         @GetMapping(path="/apellidos")
         public ResponseEntity <List <DatosUser>> findApellidoPerez (String apellido) {
-        return ResponseEntity.ok(userRepository.findByApellido(apellido));
+        return ResponseEntity.ok(userRepository.findByApellido("perez"));
     }
 
 

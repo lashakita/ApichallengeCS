@@ -8,5 +8,6 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface UserRepository extends CrudRepository <DatosUser, Integer> {
-  findByApellido(String apellido): List <DatosUser>;
+    List<DatosUser>findByApellido(String apellido);
 }
+
