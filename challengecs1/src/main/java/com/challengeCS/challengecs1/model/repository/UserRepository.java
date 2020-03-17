@@ -8,6 +8,5 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface UserRepository extends CrudRepository <DatosUser, Integer> {
-    @Query("select o from MyObject o where inventoryId in :Perez")
-    List<DatosUser> findPerez(@Param("Perez") List<DatosUser> datosPersonaPost);
+  findByApellido(String apellido): List <DatosUser>;
 }
