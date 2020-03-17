@@ -1,28 +1,48 @@
 package com.challengeCS.challengecs1.controller;
 
 import com.challengeCS.challengecs1.model.DatosUser;
+import com.challengeCS.challengecs1.model.repository.UserRepository;
 import com.challengeCS.challengecs1.services.DatosUserSerivce;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.function.Consumer;
 
 @RestController
 @RequestMapping ("/api")
 public class DatosUserController {
+    @Autowired
+    private UserRepository userRepository;
 
-private DatosUserSerivce datosUserSerivce;
+    private DatosUserSerivce datosUserSerivce;
 
-public DatosUserController (DatosUserSerivce datosUserServirce){this.datosUserSerivce = datosUserServirce;}
-
- @PostMapping("/datos")
- public ResponseEntity <Object> postDatosUser (@RequestBody List<DatosUser> datosPersonaPost) {
-    return ResponseEntity.ok(datosUserSerivce.addDatosToList(datosPersonaPost));
+    public DatosUserController(DatosUserSerivce datosUserServirce) {
+        this.datosUserSerivce = datosUserServirce;
     }
 
+    //puntos 2 y 3
+    @PostMapping("/datos")
+    public ResponseEntity<Object> postDatosUser(@RequestBody List<DatosUser> datosPersonaPost) {
+        datosPersonaPost.forEach(DatosUser -> userRepository.save(DatosUser));
+        return ResponseEntity.ok(datosUserSerivce.addDatosToList(datosPersonaPost));
+    }
+
+    //get apellidos
+        @GetMapping(path="/apellidos")
+        public @ResponseBody List <DatosUser> findApellidoPerez (String apellido) {
+        return userRepository.findPerez("Perez");
+    }
+
+
 }
+
+
+
+
+
 
 

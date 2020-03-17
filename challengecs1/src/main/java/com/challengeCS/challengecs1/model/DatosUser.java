@@ -1,15 +1,16 @@
 package com.challengeCS.challengecs1.model;
-
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
+@Entity
 public class DatosUser implements Serializable {
 
+    @Id
+    private int  codigo;
+    private String dni;
     private String nombre;
     private String apellido;
-    private int codigo;
-    private String dni;
 
     public DatosUser() {}
 

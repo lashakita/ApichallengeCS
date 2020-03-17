@@ -12,19 +12,18 @@ public class DatosUserSerivce {
 
     //punto 2
     public PuntoDosWrapper addDatosToList(List<DatosUser> listaDePersonas) {
-        PuntoDosWrapper pipo = new PuntoDosWrapper();
-        pipo.setDatosDeUsuario(listaDePersonas);
-        {   //ordenar la lista por codigo
-            Collections.sort(listaDePersonas, (persona1, persona2) -> persona1.getCodigo() - persona2.getCodigo());
+        PuntoDosWrapper sortPostPunto2 = new PuntoDosWrapper();
 
+        {   //encontrar el 1er dni
+            sortPostPunto2.setPrimerDni(listaDePersonas.stream().findFirst().get().getDni());
+
+            // ultimo nombre
+            sortPostPunto2.setUltimoNombre(listaDePersonas.get(listaDePersonas.size() - 1).getNombre());
+
+            //ordenar la lista por codigo
+           Collections.sort(listaDePersonas, (persona1, persona2) -> persona1.getCodigo() - persona2.getCodigo());
+           sortPostPunto2.setListaOrdenadaPorCodigo(listaDePersonas);
         }
-
-        //encontrar el 1er dni
-        pipo.getPrimerDni();
-        // ultimo nombre
-        pipo.getUltimoNombre();
-
-        return pipo;
-
+        return sortPostPunto2;
     }
 }
