@@ -33,8 +33,8 @@ public class DatosUserController {
 
     //get apellidos
         @GetMapping(path="/apellidos")
-        public @ResponseBody List <DatosUser> findApellidoPerez (String apellido) {
-        return userRepository.findPerez("Perez");
+        public ResponseEntity <List <DatosUser>> findApellidoPerez (String apellido) {
+        return ResponseEntity.ok(userRepository.findByApellido(apellido));
     }
 
 
