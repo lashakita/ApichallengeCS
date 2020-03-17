@@ -1,9 +1,7 @@
 package com.challengeCS.challengecs1.services;
 
-import com.challengeCS.challengecs1.model.ResponseResults;
-import com.challengeCS.challengecs1.model.DatosUser;
+import com.challengeCS.challengecs1.wrapper.ResponseResults;
 import org.springframework.stereotype.Service;
-import com.challengeCS.challengecs1.persistence.DatosUserStorage;
 
 import java.util.List;
 

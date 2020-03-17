@@ -18,17 +18,10 @@ private DatosUserSerivce datosUserSerivce;
 
 public DatosUserController (DatosUserSerivce datosUserServirce){this.datosUserSerivce = datosUserServirce;}
 
-/*@PostMapping ("/datos")
-public DatosUser postdatos(@RequestBody DatosUser datosUser){
-    return datosUserSerivce.addNameToList(datosUser);
-}*/
-    @PostMapping("/datos")
-    public ResponseEntity <Object> postDatosUser (@RequestBody List<DatosUser> datosPersonaPost) {
-        return ResponseEntity.ok(datosUserSerivce.addDatosToList(datosPersonaPost));
+ @PostMapping("/datos")
+ public ResponseEntity <Object> postDatosUser (@RequestBody List<DatosUser> datosPersonaPost) {
+    return ResponseEntity.ok(datosUserSerivce.addDatosToList(datosPersonaPost));
     }
-
-
-
 
 }
 

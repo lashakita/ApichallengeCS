@@ -1,4 +1,4 @@
-package com.challengeCS.challengecs1.model;
+package com.challengeCS.challengecs1.wrapper;
 
 import java.io.Serializable;
 import java.util.ArrayList;
